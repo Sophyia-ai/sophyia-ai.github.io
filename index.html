@@ -1,209 +1,1330 @@
-<!DOCTYPE HTML>
-<!--
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Hyperspace by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sophyia — The Intelligence Orchestration Platform</title>
+    <meta name="description" content="Sophyia orchestrates consensus between the world's leading Foundation Models to ensure accuracy, security, and creativity.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◆</text></svg>">
 
-		<!-- Sidebar -->
-			<section id="sidebar">
-				<div class="inner">
-					<nav>
-						<ul>
-							<li><a href="#intro">Welcome</a></li>
-							<li><a href="#one">Who we are</a></li>
-							<li><a href="#two">What we do</a></li>
-							<li><a href="#three">Get in touch</a></li>
-						</ul>
-					</nav>
-				</div>
-			</section>
+    <style>
+        /* ═══════════════════════════════════════════
+           CSS VARIABLES & RESET
+           ═══════════════════════════════════════════ */
+        :root {
+            --bg-deep: #0a0a0f;
+            --bg-dark: #0f0f18;
+            --bg-card: #14141f;
+            --bg-card-hover: #1a1a28;
+            --sidebar-bg: #08080d;
+            --text-primary: #e8e6e3;
+            --text-secondary: #8a8a9a;
+            --text-muted: #5a5a6a;
+            --accent-primary: #6366f1;
+            --accent-secondary: #818cf8;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --accent-warm: #f59e0b;
+            --accent-cool: #06b6d4;
+            --beasts-accent: #3b82f6;
+            --beasts-glow: rgba(59, 130, 246, 0.12);
+            --nooai-accent: #10b981;
+            --nooai-glow: rgba(16, 185, 129, 0.12);
+            --border-subtle: rgba(255, 255, 255, 0.06);
+            --border-hover: rgba(255, 255, 255, 0.12);
+            --sidebar-width: 300px;
+            --transition-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+        }
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-				<!-- Intro -->
-					<section id="intro" class="wrapper style1 fullscreen fade-up">
-						<div class="inner">
-							<h1>Hyperspace</h1>
-							<p>Just another fine responsive site template designed by <a href="http://html5up.net">HTML5 UP</a><br />
-							and released for free under the <a href="http://html5up.net/license">Creative Commons</a>.</p>
-							<ul class="actions">
-								<li><a href="#one" class="button scrolly">Learn more</a></li>
-							</ul>
-						</div>
-					</section>
+        html {
+            scroll-behavior: smooth;
+            scrollbar-width: thin;
+            scrollbar-color: var(--accent-primary) var(--bg-deep);
+        }
 
-				<!-- One -->
-					<section id="one" class="wrapper style2 spotlights">
-						<section>
-							<a href="#" class="image"><img src="images/pic01.jpg" alt="" data-position="center center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Sed ipsum dolor</h2>
-									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
-									<ul class="actions">
-										<li><a href="generic.html" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="#" class="image"><img src="images/pic02.jpg" alt="" data-position="top center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Feugiat consequat</h2>
-									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
-									<ul class="actions">
-										<li><a href="generic.html" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="#" class="image"><img src="images/pic03.jpg" alt="" data-position="25% 25%" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Ultricies aliquam</h2>
-									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
-									<ul class="actions">
-										<li><a href="generic.html" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-					</section>
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-deep);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
 
-				<!-- Two -->
-					<section id="two" class="wrapper style3 fade-up">
-						<div class="inner">
-							<h2>What we do</h2>
-							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
-							<div class="features">
-								<section>
-									<span class="icon solid major fa-code"></span>
-									<h3>Lorem ipsum amet</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-lock"></span>
-									<h3>Aliquam sed nullam</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-cog"></span>
-									<h3>Sed erat ullam corper</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-desktop"></span>
-									<h3>Veroeros quis lorem</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-link"></span>
-									<h3>Urna quis bibendum</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon major fa-gem"></span>
-									<h3>Aliquam urna dapibus</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-							</div>
-							<ul class="actions">
-								<li><a href="generic.html" class="button">Learn more</a></li>
-							</ul>
-						</div>
-					</section>
+        /* ═══════════════════════════════════════════
+           SIDEBAR
+           ═══════════════════════════════════════════ */
+        #sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: var(--sidebar-width);
+            height: 100vh;
+            background: var(--sidebar-bg);
+            border-right: 1px solid var(--border-subtle);
+            display: flex;
+            flex-direction: column;
+            z-index: 100;
+            padding: 3rem 2rem 2rem;
+            transition: transform 0.5s var(--transition-smooth);
+        }
 
-				<!-- Three -->
-					<section id="three" class="wrapper style1 fade-up">
-						<div class="inner">
-							<h2>Get in touch</h2>
-							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
-							<div class="split style1">
-								<section>
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<label for="name">Name</label>
-												<input type="text" name="name" id="name" />
-											</div>
-											<div class="field half">
-												<label for="email">Email</label>
-												<input type="text" name="email" id="email" />
-											</div>
-											<div class="field">
-												<label for="message">Message</label>
-												<textarea name="message" id="message" rows="5"></textarea>
-											</div>
-										</div>
-										<ul class="actions">
-											<li><a href="" class="button submit">Send Message</a></li>
-										</ul>
-									</form>
-								</section>
-								<section>
-									<ul class="contact">
-										<li>
-											<h3>Address</h3>
-											<span>12345 Somewhere Road #654<br />
-											Nashville, TN 00000-0000<br />
-											USA</span>
-										</li>
-										<li>
-											<h3>Email</h3>
-											<a href="#">user@untitled.tld</a>
-										</li>
-										<li>
-											<h3>Phone</h3>
-											<span>(000) 000-0000</span>
-										</li>
-										<li>
-											<h3>Social</h3>
-											<ul class="icons">
-												<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-												<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-												<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-												<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-												<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-											</ul>
-										</li>
-									</ul>
-								</section>
-							</div>
-						</div>
-					</section>
+        .sidebar-header {
+            margin-bottom: 3rem;
+        }
 
-			</div>
+        .sidebar-logo {
+            font-family: 'Instrument Serif', serif;
+            font-size: 2.2rem;
+            font-weight: 400;
+            letter-spacing: 0.04em;
+            color: var(--text-primary);
+            display: block;
+            text-decoration: none;
+            margin-bottom: 0.4rem;
+        }
 
-		<!-- Footer -->
-			<footer id="footer" class="wrapper style1-alt">
-				<div class="inner">
-					<ul class="menu">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-				</div>
-			</footer>
+        .sidebar-logo span {
+            color: var(--accent-primary);
+        }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+        .sidebar-tagline {
+            font-size: 0.72rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
 
-	</body>
+        .sidebar-nav {
+            flex: 1;
+        }
+
+        .sidebar-nav ul {
+            list-style: none;
+        }
+
+        .sidebar-nav li {
+            margin-bottom: 0.25rem;
+        }
+
+        .sidebar-nav a {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+            padding: 0.75rem 1rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .sidebar-nav a::before {
+            content: '';
+            width: 3px;
+            height: 0;
+            background: var(--accent-primary);
+            border-radius: 2px;
+            position: absolute;
+            left: -2rem;
+            transition: height 0.3s var(--transition-smooth);
+        }
+
+        .sidebar-nav a:hover {
+            color: var(--text-primary);
+            background: rgba(99, 102, 241, 0.06);
+        }
+
+        .sidebar-nav a.active {
+            color: var(--text-primary);
+            background: rgba(99, 102, 241, 0.08);
+        }
+
+        .sidebar-nav a.active::before {
+            height: 20px;
+        }
+
+        .nav-icon {
+            width: 18px;
+            height: 18px;
+            opacity: 0.5;
+            transition: opacity 0.3s ease;
+        }
+
+        .sidebar-nav a:hover .nav-icon,
+        .sidebar-nav a.active .nav-icon {
+            opacity: 0.9;
+        }
+
+        .sidebar-footer {
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .sidebar-footer p {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            letter-spacing: 0.05em;
+        }
+
+        /* Mobile toggle */
+        .sidebar-toggle {
+            display: none;
+            position: fixed;
+            top: 1.2rem;
+            left: 1.2rem;
+            z-index: 200;
+            width: 44px;
+            height: 44px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 10px;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .sidebar-toggle span {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: var(--text-primary);
+            border-radius: 1px;
+            transition: all 0.3s ease;
+        }
+
+        /* ═══════════════════════════════════════════
+           MAIN CONTENT
+           ═══════════════════════════════════════════ */
+        #main {
+            margin-left: var(--sidebar-width);
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 6rem 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        .section-inner {
+            max-width: 900px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* ═══════════════════════════════════════════
+           HERO / WELCOME SECTION
+           ═══════════════════════════════════════════ */
+        #welcome {
+            background: var(--bg-deep);
+            position: relative;
+            overflow: hidden;
+        }
+
+        #welcome::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -30%;
+            width: 80%;
+            height: 200%;
+            background: radial-gradient(ellipse, var(--accent-glow) 0%, transparent 60%);
+            pointer-events: none;
+            animation: pulseGlow 8s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.4; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.05); }
+        }
+
+        .hero-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent-secondary);
+            font-weight: 500;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.8s 0.2s var(--transition-smooth) forwards;
+        }
+
+        .hero-label::before {
+            content: '';
+            width: 24px;
+            height: 1px;
+            background: var(--accent-primary);
+        }
+
+        .hero-title {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(2.8rem, 5vw, 4.5rem);
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+            opacity: 0;
+            animation: fadeSlideUp 0.8s 0.4s var(--transition-smooth) forwards;
+        }
+
+        .hero-title em {
+            font-style: italic;
+            color: var(--accent-secondary);
+        }
+
+        .hero-text {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 640px;
+            line-height: 1.8;
+            opacity: 0;
+            animation: fadeSlideUp 0.8s 0.6s var(--transition-smooth) forwards;
+        }
+
+        .hero-cta {
+            margin-top: 3rem;
+            display: flex;
+            gap: 1rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.8s 0.8s var(--transition-smooth) forwards;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.85rem 1.8rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+        }
+
+        .btn-primary {
+            background: var(--accent-primary);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-hover);
+        }
+
+        .btn-ghost:hover {
+            color: var(--text-primary);
+            border-color: var(--text-muted);
+        }
+
+        @keyframes fadeSlideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ═══════════════════════════════════════════
+           THE ENGINE SECTION
+           ═══════════════════════════════════════════ */
+        #engine {
+            background: var(--bg-dark);
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .section-label {
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent-secondary);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(2rem, 3.5vw, 3rem);
+            font-weight: 400;
+            margin-bottom: 1rem;
+            line-height: 1.15;
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            max-width: 560px;
+            margin-bottom: 3.5rem;
+            line-height: 1.7;
+        }
+
+        .engine-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .engine-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 2.2rem 1.8rem;
+            transition: all 0.4s var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .engine-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-primary), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .engine-card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-hover);
+            transform: translateY(-4px);
+        }
+
+        .engine-card:hover::before {
+            opacity: 1;
+        }
+
+        .engine-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .engine-card:nth-child(1) .engine-icon {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .engine-card:nth-child(2) .engine-icon {
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+        }
+
+        .engine-card:nth-child(3) .engine-icon {
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        .engine-card h3 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 0.7rem;
+            color: var(--text-primary);
+        }
+
+        .engine-card p {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .engine-github {
+            margin-top: 2.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            letter-spacing: 0.03em;
+            padding: 0.8rem 1.2rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            width: fit-content;
+        }
+
+        .engine-github svg {
+            opacity: 0.5;
+        }
+
+        /* ═══════════════════════════════════════════
+           SOLUTIONS SECTION
+           ═══════════════════════════════════════════ */
+        #solutions {
+            background: var(--bg-deep);
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .solution-card {
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border-subtle);
+            transition: all 0.5s var(--transition-smooth);
+            position: relative;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .solution-card.beasts {
+            background: linear-gradient(180deg, var(--bg-card) 0%, #0d1117 100%);
+        }
+
+        .solution-card.beasts:hover {
+            border-color: rgba(59, 130, 246, 0.3);
+            box-shadow: 0 20px 60px rgba(59, 130, 246, 0.08);
+        }
+
+        .solution-card.nooai {
+            background: linear-gradient(180deg, var(--bg-card) 0%, #0a1410 100%);
+        }
+
+        .solution-card.nooai:hover {
+            border-color: rgba(16, 185, 129, 0.3);
+            box-shadow: 0 20px 60px rgba(16, 185, 129, 0.08);
+        }
+
+        .solution-visual {
+            height: 220px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Beasts Visual — Dark, geometric, corporate */
+        .beasts .solution-visual {
+            background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #0d1117 100%);
+        }
+
+        .beasts-grid-overlay {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(59, 130, 246, 0.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(59, 130, 246, 0.06) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .beasts-nodes {
+            position: relative;
+            width: 180px;
+            height: 120px;
+        }
+
+        .beasts-node {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: var(--beasts-accent);
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+        }
+
+        .beasts-node:nth-child(1) { top: 10px; left: 50%; transform: translateX(-50%); }
+        .beasts-node:nth-child(2) { bottom: 10px; left: 20px; }
+        .beasts-node:nth-child(3) { bottom: 10px; right: 20px; }
+        .beasts-node:nth-child(4) { top: 50%; left: 0; width: 8px; height: 8px; opacity: 0.5; }
+        .beasts-node:nth-child(5) { top: 50%; right: 0; width: 8px; height: 8px; opacity: 0.5; }
+
+        .beasts-badge {
+            position: absolute;
+            bottom: 16px;
+            right: 16px;
+            font-size: 0.6rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--beasts-accent);
+            opacity: 0.5;
+            font-weight: 500;
+        }
+
+        /* nOOai Visual — Organic, flowing, colorful */
+        .nooai .solution-visual {
+            background: linear-gradient(135deg, #0a1410 0%, #0f1d18 50%, #0a1410 100%);
+        }
+
+        .nooai-orbs {
+            position: relative;
+            width: 200px;
+            height: 140px;
+        }
+
+        .nooai-orb {
+            position: absolute;
+            border-radius: 50%;
+            animation: orbFloat 6s ease-in-out infinite;
+        }
+
+        .nooai-orb:nth-child(1) {
+            width: 80px; height: 80px;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.3), transparent 70%);
+            top: 10px; left: 30px;
+            animation-delay: 0s;
+        }
+
+        .nooai-orb:nth-child(2) {
+            width: 60px; height: 60px;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.25), transparent 70%);
+            top: 40px; right: 20px;
+            animation-delay: -2s;
+        }
+
+        .nooai-orb:nth-child(3) {
+            width: 50px; height: 50px;
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.2), transparent 70%);
+            bottom: 10px; left: 60px;
+            animation-delay: -4s;
+        }
+
+        .nooai-orb:nth-child(4) {
+            width: 100px; height: 100px;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.15), transparent 70%);
+            top: 20px; left: 70px;
+            animation-delay: -1s;
+        }
+
+        .nooai-dots {
+            position: absolute;
+            inset: 0;
+        }
+
+        .nooai-dot {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: rgba(16, 185, 129, 0.4);
+            border-radius: 50%;
+            animation: dotPulse 3s ease-in-out infinite;
+        }
+
+        .nooai-dot:nth-child(1) { top: 20%; left: 15%; animation-delay: 0s; }
+        .nooai-dot:nth-child(2) { top: 40%; left: 75%; animation-delay: 0.5s; }
+        .nooai-dot:nth-child(3) { top: 70%; left: 30%; animation-delay: 1s; }
+        .nooai-dot:nth-child(4) { top: 25%; left: 55%; animation-delay: 1.5s; }
+        .nooai-dot:nth-child(5) { top: 60%; left: 65%; animation-delay: 2s; }
+        .nooai-dot:nth-child(6) { top: 80%; left: 50%; animation-delay: 2.5s; }
+        .nooai-dot:nth-child(7) { top: 15%; left: 85%; animation-delay: 0.3s; }
+        .nooai-dot:nth-child(8) { top: 55%; left: 10%; animation-delay: 1.2s; }
+
+        @keyframes orbFloat {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(8px, -6px) scale(1.05); }
+            66% { transform: translate(-5px, 4px) scale(0.95); }
+        }
+
+        @keyframes dotPulse {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.5); }
+        }
+
+        .nooai-badge {
+            position: absolute;
+            bottom: 16px;
+            right: 16px;
+            font-size: 0.6rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--nooai-accent);
+            opacity: 0.5;
+            font-weight: 500;
+        }
+
+        .solution-content {
+            padding: 2rem 2rem 2.5rem;
+        }
+
+        .solution-tag {
+            display: inline-block;
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            font-weight: 500;
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        .beasts .solution-tag {
+            color: var(--beasts-accent);
+            background: var(--beasts-glow);
+        }
+
+        .nooai .solution-tag {
+            color: var(--nooai-accent);
+            background: var(--nooai-glow);
+        }
+
+        .solution-card h3 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 0.8rem;
+            color: var(--text-primary);
+        }
+
+        .solution-card p {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .solution-features {
+            margin-top: 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .solution-feature {
+            font-size: 0.72rem;
+            letter-spacing: 0.05em;
+            padding: 0.3rem 0.7rem;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.04);
+            color: var(--text-muted);
+            border: 1px solid var(--border-subtle);
+        }
+
+        /* ═══════════════════════════════════════════
+           CONTACT SECTION
+           ═══════════════════════════════════════════ */
+        #contact {
+            background: var(--bg-dark);
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-info h3 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+        }
+
+        .contact-detail svg {
+            width: 18px;
+            height: 18px;
+            color: var(--accent-primary);
+            flex-shrink: 0;
+        }
+
+        .contact-detail a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-detail a:hover {
+            color: var(--accent-secondary);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+        }
+
+        .form-field {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .form-field label {
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .form-field input,
+        .form-field textarea {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 0.8rem 1rem;
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .form-field input:focus,
+        .form-field textarea:focus {
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px var(--accent-glow);
+        }
+
+        .form-field textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-submit {
+            align-self: flex-start;
+        }
+
+        /* ═══════════════════════════════════════════
+           SCROLL ANIMATIONS
+           ═══════════════════════════════════════════ */
+        .reveal {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.8s var(--transition-smooth);
+        }
+
+        .reveal.hidden {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+
+        /* ═══════════════════════════════════════════
+           FOOTER
+           ═══════════════════════════════════════════ */
+        footer {
+            margin-left: var(--sidebar-width);
+            padding: 2rem 4rem;
+            border-top: 1px solid var(--border-subtle);
+            background: var(--bg-deep);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        footer a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: var(--accent-secondary);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        /* ═══════════════════════════════════════════
+           RESPONSIVE
+           ═══════════════════════════════════════════ */
+        @media (max-width: 1024px) {
+            .engine-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+
+            .solutions-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-layout {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            section {
+                padding: 4rem 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --sidebar-width: 260px;
+            }
+
+            #sidebar {
+                transform: translateX(-100%);
+            }
+
+            #sidebar.open {
+                transform: translateX(0);
+            }
+
+            .sidebar-toggle {
+                display: flex;
+            }
+
+            #main, footer {
+                margin-left: 0;
+            }
+
+            section {
+                padding: 4rem 1.5rem;
+            }
+
+            footer {
+                padding: 2rem 1.5rem;
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+        }
+
+        /* Overlay (mobile) */
+        .sidebar-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 90;
+            backdrop-filter: blur(4px);
+        }
+
+        .sidebar-overlay.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Mobile Toggle -->
+    <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- ═══════════════════════════════════════════
+         SIDEBAR
+         ═══════════════════════════════════════════ -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <a href="#welcome" class="sidebar-logo">SOPHY<span>IA</span></a>
+            <span class="sidebar-tagline">The Intelligence Orchestration Platform</span>
+        </div>
+
+        <div class="sidebar-nav">
+            <ul>
+                <li>
+                    <a href="#welcome" class="active">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+                        Welcome
+                    </a>
+                </li>
+                <li>
+                    <a href="#engine">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                        The Engine
+                    </a>
+                </li>
+                <li>
+                    <a href="#solutions">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                        Solutions
+                    </a>
+                </li>
+                <li>
+                    <a href="#contact">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="sidebar-footer">
+            <p>© 2026 Sophyia AI<br>Clerver and Partners SA<br>Crans-Montana, Switzerland</p>
+        </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════
+         MAIN CONTENT
+         ═══════════════════════════════════════════ -->
+    <div id="main">
+
+        <!-- ── WELCOME ── -->
+        <section id="welcome">
+            <div class="section-inner">
+                <span class="hero-label">Intelligence Orchestration</span>
+                <h1 class="hero-title">Beyond the<br><em>Single Model.</em></h1>
+                <p class="hero-text">
+                    Sophyia is the infrastructure layer that orchestrates secure swarms of specialized AI agents at enterprise scale. We don't route prompts — we engineer consensus between Foundation Models, turning fragmented intelligence into reliable, auditable decisions.
+                </p>
+                <div class="hero-cta">
+                    <a href="#solutions" class="btn btn-primary">
+                        Explore Solutions
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </a>
+                    <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── THE ENGINE ── -->
+        <section id="engine">
+            <div class="section-inner">
+                <span class="section-label reveal">The Engine</span>
+                <h2 class="section-title reveal reveal-delay-1">The Atomic Swarm<br>Architecture.</h2>
+                <p class="section-subtitle reveal reveal-delay-2">
+                    Three pillars power every Sophyia orchestration — ensuring enterprise-grade reliability at every layer.
+                </p>
+
+                <div class="engine-grid">
+                    <div class="engine-card reveal reveal-delay-1">
+                        <div class="engine-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="16" r="1"/></svg>
+                        </div>
+                        <h3>Security First</h3>
+                        <p>Enterprise-grade data isolation with namespace-level separation, output sanitization, and OWASP LLM Top 10 compliance. Built for regulated industries.</p>
+                    </div>
+
+                    <div class="engine-card reveal reveal-delay-2">
+                        <div class="engine-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        </div>
+                        <h3>Infinite Context</h3>
+                        <p>Massive parallel processing across agent threads. Real-time streaming, live audio synthesis, and document-aware reasoning — at scale.</p>
+                    </div>
+
+                    <div class="engine-card reveal reveal-delay-3">
+                        <div class="engine-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                        </div>
+                        <h3>Adaptive Consensus</h3>
+                        <p>Our proprietary multi-agent architecture eliminates hallucinations through cognitive depth control, adaptive routing, and cross-model validation protocols.</p>
+                    </div>
+                </div>
+
+                <div class="engine-github reveal reveal-delay-4">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    <span>Developed on GitHub — Private repository</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── SOLUTIONS ── -->
+        <section id="solutions">
+            <div class="section-inner">
+                <span class="section-label reveal">Solutions</span>
+                <h2 class="section-title reveal reveal-delay-1">Two Platforms.<br>One Core.</h2>
+                <p class="section-subtitle reveal reveal-delay-2">
+                    A shared cognitive engine powers two products — targeting enterprise productivity and next-gen social AI.
+                </p>
+
+                <div class="solutions-grid">
+                    <!-- THE BEASTS -->
+                    <div class="solution-card beasts reveal reveal-delay-2">
+                        <div class="solution-visual">
+                            <div class="beasts-grid-overlay"></div>
+                            <div class="beasts-nodes">
+                                <div class="beasts-node"></div>
+                                <div class="beasts-node"></div>
+                                <div class="beasts-node"></div>
+                                <div class="beasts-node"></div>
+                                <div class="beasts-node"></div>
+                            </div>
+                            <span class="beasts-badge">Enterprise Ready</span>
+                        </div>
+                        <div class="solution-content">
+                            <span class="solution-tag">Enterprise Platform</span>
+                            <h3>The Beasts.</h3>
+                            <p>The autonomous workforce for Enterprise. Multi-agent collaboration with structured synthesis, document-aware reasoning, and full audit trails. Built for teams that need decisions, not conversations.</p>
+                            <div class="solution-features">
+                                <span class="solution-feature">Structured Synthesis</span>
+                                <span class="solution-feature">Project-Aware Context</span>
+                                <span class="solution-feature">Live Audio Agents</span>
+                                <span class="solution-feature">Enterprise Security</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- nOOai -->
+                    <div class="solution-card nooai reveal reveal-delay-3">
+                        <div class="solution-visual">
+                            <div class="nooai-orbs">
+                                <div class="nooai-orb"></div>
+                                <div class="nooai-orb"></div>
+                                <div class="nooai-orb"></div>
+                                <div class="nooai-orb"></div>
+                            </div>
+                            <div class="nooai-dots">
+                                <div class="nooai-dot"></div>
+                                <div class="nooai-dot"></div>
+                                <div class="nooai-dot"></div>
+                                <div class="nooai-dot"></div>
+                                <div class="nooai-dot"></div>
+                                <div class="nooai-dot"></div>
+                                <div class="nooai-dot"></div>
+                                <div class="nooai-dot"></div>
+                            </div>
+                            <span class="nooai-badge">Next Generation</span>
+                        </div>
+                        <div class="solution-content">
+                            <span class="solution-tag">Simulation Engine</span>
+                            <h3>nOOai.</h3>
+                            <p>The next-gen social simulation engine. Multiple AI agents debate in real-time with live streaming, editorial variants, and on-demand synthesis. Where emergent intelligence becomes a spectacle.</p>
+                            <div class="solution-features">
+                                <span class="solution-feature">Live AI Debates</span>
+                                <span class="solution-feature">Real-Time Streaming</span>
+                                <span class="solution-feature">Editorial Variants</span>
+                                <span class="solution-feature">Viral Mechanics</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── CONTACT ── -->
+        <section id="contact">
+            <div class="section-inner">
+                <span class="section-label reveal">Contact</span>
+                <h2 class="section-title reveal reveal-delay-1">Let's Build<br>Together.</h2>
+
+                <div class="contact-layout reveal reveal-delay-2">
+                    <div class="contact-info">
+                        <h3>Ready to orchestrate intelligence?</h3>
+                        <p>Whether you're exploring enterprise AI deployment or seeking a technology partnership, we'd love to hear from you.</p>
+
+                        <div class="contact-detail">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <a href="#" id="email-link" data-n="hello" data-d="sophyia.io">Loading...</a>
+                        </div>
+
+                        <div class="contact-detail">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <div>
+                                <strong style="color: var(--text-primary); font-weight: 500;">Clerver and Partners SA</strong><br>
+                                Route du Golf 7<br>
+                                3963 Crans-Montana, Switzerland
+                            </div>
+                        </div>
+
+                        <div class="contact-detail">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                            <a href="https://www.linkedin.com/company/sophyia-ai" target="_blank" rel="noopener">Sophyia AI on LinkedIn</a>
+                        </div>
+                    </div>
+
+                    <form class="contact-form" action="https://formspree.io/f/mdalkdoo" method="POST">
+                        <input type="text" name="_gotcha" style="display:none">
+                        <input type="hidden" name="_subject" value="New contact from sophyia.io">
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" placeholder="Your name" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="you@company.com" required>
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" name="company" placeholder="Your company">
+                        </div>
+                        <div class="form-field">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your project..." required></textarea>
+                        </div>
+                        <div class="form-submit">
+                            <button type="submit" class="btn btn-primary">
+                                Send Message
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         FOOTER
+         ═══════════════════════════════════════════ -->
+    <footer>
+        <p>© 2026 Sophyia AI — A project by Clerver and Partners SA</p>
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/company/sophyia-ai" target="_blank" rel="noopener">LinkedIn</a>
+            <span class="footer-github">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: -2px; margin-right: 4px;"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                Built on GitHub
+            </span>
+        </div>
+    </footer>
+
+    <!-- ═══════════════════════════════════════════
+         JAVASCRIPT
+         ═══════════════════════════════════════════ -->
+    <script>
+        // ── Scroll Reveal ──
+        const reveals = document.querySelectorAll('.reveal');
+        // Start hidden, then reveal on scroll (graceful degradation: visible by default if JS fails)
+        reveals.forEach(el => el.classList.add('hidden'));
+
+        const observerOptions = { threshold: 0.15, rootMargin: '0px 0px -50px 0px' };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.remove('hidden');
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        reveals.forEach(el => observer.observe(el));
+
+        // ── Active Nav Tracking ──
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.sidebar-nav a');
+
+        const navObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    const activeLink = document.querySelector(`.sidebar-nav a[href="#${entry.target.id}"]`);
+                    if (activeLink) activeLink.classList.add('active');
+                }
+            });
+        }, { threshold: 0.3 });
+
+        sections.forEach(section => navObserver.observe(section));
+
+        // ── Mobile Sidebar ──
+        const sidebar = document.getElementById('sidebar');
+        const toggle = document.getElementById('sidebarToggle');
+        const overlay = document.getElementById('sidebarOverlay');
+
+        function openSidebar() {
+            sidebar.classList.add('open');
+            overlay.classList.add('active');
+        }
+
+        function closeSidebar() {
+            sidebar.classList.remove('open');
+            overlay.classList.remove('active');
+        }
+
+        toggle.addEventListener('click', () => {
+            sidebar.classList.contains('open') ? closeSidebar() : openSidebar();
+        });
+
+        overlay.addEventListener('click', closeSidebar);
+
+        // Close sidebar on nav click (mobile)
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) closeSidebar();
+            });
+        });
+
+        // ── Email Protection (anti-bot) ──
+        const el = document.getElementById('email-link');
+        if (el) {
+            const addr = el.dataset.n + '@' + el.dataset.d;
+            el.href = 'mailto:' + addr;
+            el.textContent = addr;
+        }
+
+        // Form is handled by Formspree (no JS needed)
+    </script>
+
+</body>
 </html>
