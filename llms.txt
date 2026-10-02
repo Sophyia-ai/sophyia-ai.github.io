@@ -1,0 +1,27 @@
+# Sophyia
+
+> Sophyia is a Swiss SaaS company building an intelligence orchestration platform: a multi-agent AI that makes several instances reason, debate and adjudicate before answering — "Beyond the Single Model". Data and inference run in Switzerland (Zurich). Answers come with a reasoning trail and the system is built to refuse when evidence is thin.
+
+## Start here
+- [Home — The Intelligence Orchestration Platform](https://sophyia.io/)
+- [FAQ hub](https://sophyia.io/faq/)
+- [Blog — AI, multi-agent systems & AI for developers](https://sophyia.io/blog/)
+
+## FAQ (questions & answers)
+- [Platform & multi-agent AI](https://sophyia.io/faq/platform.html): how the orchestration engine works, "beyond the single model", built to refuse.
+- [Products](https://sophyia.io/faq/products.html): Sophyia Chat, The Beasts, nOOai.
+- [AI for developers](https://sophyia.io/faq/developers.html): multi-agent orchestration, reliability, auditability for technical teams.
+- [Sovereignty & Swiss hosting](https://sophyia.io/faq/sovereignty.html): data residency in Switzerland, auditability, regulated markets.
+
+## Products
+- Sophyia Chat — business assistant (in production with paying customers).
+- The Beasts — autonomous multi-agent workforce for enterprise, with audit trails and structured debate.
+- nOOai — live multi-agent debate platform.
+
+## Key facts
+- Swiss company; data and inference hosted in Switzerland (Zurich); auditable; strict on sources.
+- Works with frontier models; depth is architectural (the same model run in opposing roles — analyst, risk officer, contradictor, adjudicator).
+- Targets decisions that carry consequences, where a confident wrong answer is the real liability.
+
+## Contact
+- https://sophyia.io/#contact
