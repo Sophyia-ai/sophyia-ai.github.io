@@ -2,3 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://sophyia.io/sitemap.xml
+
+# AI guidance file
+# llms.txt: https://sophyia.io/llms.txt
