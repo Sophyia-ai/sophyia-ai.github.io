@@ -1,0 +1,92 @@
+#!/usr/bin/env python3
+"""
+chrome.py — chrome commun (sidebar IDENTIQUE à la home sophyia.io) pour blog + FAQ.
+Reproduit : logo SOPHY+IA, sidebar gauche 300px (#08080d), icônes, responsive (toggle mobile).
+"""
+import json, html as _html
+
+BASE = "https://sophyia.io"
+FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
+         '<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">')
+FAVICON = ("<link rel=\"icon\" type=\"image/svg+xml\" href=\"data:image/svg+xml,"
+           "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>"
+           "<circle cx='50' cy='50' r='44' fill='none' stroke='%236366f1' stroke-width='8'/></svg>\">")
+
+def esc(s): return _html.escape(str(s), quote=True)
+
+# Sidebar reprise telle quelle de la home (ancres → absolues vers la home).
+_SIDEBAR = '''<nav id="sidebar">
+    <div class="sidebar-header">
+        <a href="https://sophyia.io/#welcome" class="sidebar-logo">SOPHY<span>IA</span></a>
+        <span class="sidebar-tagline">The Intelligence Orchestration Platform</span>
+    </div>
+    <div class="sidebar-nav">
+        <ul>
+            <li><a href="https://sophyia.io/#welcome"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg><span>Welcome</span></a></li>
+            <li><a href="https://sophyia.io/#engine"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg><span>The Engine</span></a></li>
+            <li><a href="https://sophyia.io/#solutions"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><span>Solutions</span></a></li>
+            <li><a href="https://sophyia.io/#team"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>Team</span></a></li>
+            <li><a href="https://sophyia.io/#lab"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/></svg><span>Research Lab</span></a></li>
+            <li><a href="https://sophyia.io/#contact"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>Contact</span></a></li>
+            <li><a href="/blog/" data-page="blog"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span>Blog</span></a></li>
+            <li><a href="/faq/" data-page="faq"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><span>FAQ</span></a></li>
+        </ul>
+    </div>
+    <div class="sidebar-footer"><p>&copy; 2026 Sophyia AI<br>Crans-Montana, Switzerland</p></div>
+</nav>'''
+
+CSS = """
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--sidebar-width:300px;--sidebar-bg:#08080d;--bg-deep:#0a0a0f;--bg-dark:#0f0f18;--bg-card:#14141f;--bg-card-hover:#1a1a28;--text-primary:#e8e6e3;--text-secondary:#8a8a9a;--text-muted:#5a5a6a;--accent:#6366f1;--border-subtle:rgba(255,255,255,.06);--transition-smooth:cubic-bezier(.16,1,.3,1)}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg-deep);color:var(--text-secondary);line-height:1.75;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}.serif{font-family:'Instrument Serif',serif;font-weight:400}
+    ::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:var(--bg-deep)}::-webkit-scrollbar-thumb{background:var(--accent);border-radius:4px}
+    #sidebar{position:fixed;left:0;top:0;width:var(--sidebar-width);height:100vh;background:var(--sidebar-bg);border-right:1px solid var(--border-subtle);display:flex;flex-direction:column;z-index:100;padding:3rem 2rem 2rem;transition:transform .5s var(--transition-smooth);overflow-y:auto}
+    .sidebar-header{margin-bottom:3rem}
+    .sidebar-logo{font-family:'Instrument Serif',serif;font-size:2.2rem;font-weight:400;letter-spacing:.04em;color:var(--text-primary);display:block;margin-bottom:.4rem}
+    .sidebar-logo span{color:var(--accent)}
+    .sidebar-tagline{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text-muted);font-weight:500}
+    .sidebar-nav{flex:1}.sidebar-nav ul{list-style:none}
+    .sidebar-nav a{display:flex;align-items:center;gap:.9rem;padding:.75rem 1rem;color:var(--text-secondary);font-size:.88rem;letter-spacing:.02em;border-radius:8px;transition:all .3s ease}
+    .sidebar-nav a:hover{color:var(--text-primary)}
+    .sidebar-nav a.active{color:var(--text-primary);background:rgba(99,102,241,.08)}
+    .sidebar-nav a.active .nav-icon{opacity:1}
+    .nav-icon{width:18px;height:18px;opacity:.5;flex-shrink:0;transition:opacity .3s ease}
+    .sidebar-footer{font-size:.72rem;color:var(--text-muted);line-height:1.6;margin-top:1.5rem}
+    .main{margin-left:var(--sidebar-width);min-height:100vh}
+    .sb-toggle{display:none;position:fixed;top:1.2rem;left:1.2rem;z-index:200;width:44px;height:44px;background:var(--bg-card);border:1px solid var(--border-subtle);border-radius:10px;color:var(--text-primary);font-size:1.35rem;cursor:pointer;align-items:center;justify-content:center}
+    .sb-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:90;backdrop-filter:blur(4px)}
+    @media(max-width:768px){#sidebar{transform:translateX(-100%);width:260px}#sidebar.open{transform:translateX(0)}.sb-toggle{display:flex}.sb-overlay.open{display:block}.main{margin-left:0;padding-top:3.5rem}}
+"""
+
+_JS = """<script>(function(){var s=document.getElementById('sidebar'),o=document.getElementById('sbOverlay'),t=document.getElementById('sbToggle');function g(){s.classList.toggle('open');o.classList.toggle('open')}t&&t.addEventListener('click',g);o&&o.addEventListener('click',g);document.querySelectorAll('.sidebar-nav a').forEach(function(a){a.addEventListener('click',function(){if(window.innerWidth<=768){s.classList.remove('open');o.classList.remove('open')}})})})();</script>"""
+
+def sidebar(active=None):
+    s = _SIDEBAR
+    if active in ("blog", "faq"):
+        s = s.replace(f'data-page="{active}"', f'data-page="{active}" class="active"')
+    return s
+
+def page(title, desc, canonical, body, active=None, ld=None, extra_css=""):
+    lds = "".join(f'<script type="application/ld+json">\n{json.dumps(b, ensure_ascii=False, indent=2)}\n</script>\n'
+                  for b in (ld or []))
+    return f'''<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{esc(title)}</title><meta name="description" content="{esc(desc)}">
+<meta name="robots" content="index, follow"><link rel="canonical" href="{canonical}">
+<meta property="og:type" content="website"><meta property="og:title" content="{esc(title)}">
+<meta property="og:description" content="{esc(desc)}"><meta property="og:url" content="{canonical}">
+<meta property="og:image" content="{BASE}/og-image.png"><meta name="twitter:card" content="summary_large_image">
+{FAVICON}{FONTS}
+{lds}<style>{CSS}{extra_css}</style></head>
+<body>
+<button class="sb-toggle" id="sbToggle" aria-label="Menu">&#9776;</button>
+<div class="sb-overlay" id="sbOverlay"></div>
+{sidebar(active)}
+<div class="main">
+{body}
+</div>
+{_JS}
+</body></html>'''
